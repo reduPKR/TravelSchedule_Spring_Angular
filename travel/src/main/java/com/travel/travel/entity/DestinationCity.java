@@ -1,12 +1,14 @@
 package com.travel.travel.entity;
 
-import lombok.Builder;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class DestinationCity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
