@@ -5,9 +5,14 @@ import com.travel.travel.entity.DestinationCity;
 import com.travel.travel.mapper.DestinationMapper;
 import com.travel.travel.repository.DestinationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.util.Iterator;
 import java.util.List;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 
@@ -16,8 +21,7 @@ public class DestinationService {
     @Autowired
     DestinationRepository repository;
 
-    public List<DestinationCityDTO> findAll() {
-        List<DestinationCity> list = repository.findAll();
-        return list.stream().map(DestinationMapper.INSTANCE::toDTO).collect(Collectors.toList());
+    public Page<DestinationCity> findAll(Pageable pageable) {
+        return repository.findAll(pageable);
     }
 }
