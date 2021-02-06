@@ -1,16 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
-export interface Travel {
-  id: number;
-  destino: string;
-  data: string;
-}
-
-const list_travel: Travel[] = [
-  {id: 1, destino: 'Santos', data: '28/02/2021'},
-  {id: 2, destino: 'Curitiba', data: '25/02/2021'},
-  
-];
+import { DomSanitizer } from '@angular/platform-browser';
+import { DestinationCity } from 'src/app/shared/model/destination-city.model';
+import { TravelService } from 'src/app/shared/service/travel.service';
 
 @Component({
   selector: 'app-list',
@@ -18,11 +9,22 @@ const list_travel: Travel[] = [
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
-  lista = list_travel;
+  lista: DestinationCity[] = [];
 
-  constructor() { }
+  constructor(
+    public travelService: TravelService,
+    public sanitizer: DomSanitizer
+  ) { }
 
   ngOnInit(): void {
+    this.getAll();
   }
 
+  getAll(){
+    this.travelService.getAll().subscribe(
+      data=>{
+        this.lista = data.content;
+      }
+    );
+  }
 }
