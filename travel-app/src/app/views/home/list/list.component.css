@@ -1,0 +1,19 @@
+table {
+    width: 100%;
+}
+
+.pating_table{
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 40px;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #797979;
+}
+
+tr:hover{
+    background-color:#cfcfcf;
+}
