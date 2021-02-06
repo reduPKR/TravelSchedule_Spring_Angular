@@ -17,3 +17,11 @@ th, td {
 tr:hover{
     background-color:#cfcfcf;
 }
+
+.td_destino{
+    width: 40%;
+}
+
+.td_button{
+    width: 20%;
+}
