@@ -26,5 +26,6 @@ export class ListComponent implements OnInit {
         this.lista = data.content;
       }
     );
+    console.log(this.lista)
   }
 }
