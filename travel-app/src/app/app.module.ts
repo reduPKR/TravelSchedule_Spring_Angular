@@ -11,9 +11,12 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatTableModule} from '@angular/material/table';
+import {MatDialogModule} from '@angular/material/dialog';
+
 
 import { HttpClientModule } from '@angular/common/http';
 import { LocalDateTimePipe } from './shared/pipe/local-date-time.pipe';
+import { NewTravelComponent } from './views/home/new-travel/new-travel.component';
 
 
 @NgModule({
@@ -21,7 +24,8 @@ import { LocalDateTimePipe } from './shared/pipe/local-date-time.pipe';
     AppComponent,
     HomeComponent,
     ListComponent,
-    LocalDateTimePipe
+    LocalDateTimePipe,
+    NewTravelComponent
   ],
   imports: [
     HttpClientModule,
@@ -31,7 +35,8 @@ import { LocalDateTimePipe } from './shared/pipe/local-date-time.pipe';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-    MatTableModule
+    MatTableModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
