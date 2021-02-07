@@ -12,7 +12,11 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatTableModule} from '@angular/material/table';
 import {MatDialogModule} from '@angular/material/dialog';
-
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import { MatNativeDateModule } from '@angular/material/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 import { HttpClientModule } from '@angular/common/http';
 import { LocalDateTimePipe } from './shared/pipe/local-date-time.pipe';
@@ -37,6 +41,12 @@ import { NewTravelComponent } from './views/home/new-travel/new-travel.component
     MatButtonModule,
     MatTableModule,
     MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatNativeDateModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatDatepickerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

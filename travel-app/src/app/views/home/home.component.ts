@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
 
   new_travel(): void{
     const dialogRef = this.dialog.open(NewTravelComponent, {
-      minWidth: '500px',
+      minWidth: '400px',
     });
 
     dialogRef.afterClosed().subscribe(result => {

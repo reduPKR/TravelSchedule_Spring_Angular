@@ -1,1 +1,27 @@
-<p>new-travel works!</p>
+<div >
+    <h1 mat-dialog-title>Nova viagem</h1>
+    <div mat-dialog-content>
+        <form class="form-todo" [formGroup]="travelForm">
+            <mat-form-field class="form-full-width" class="form">
+                <mat-label>Cidade de destino</mat-label>
+                <input matInput placeholder="" formControlName="nome" name="nome">
+            </mat-form-field>
+            <div fxLayout="row wrap">
+                <div fxFlex="50" fxFill fxLayoutAlign="start center">
+                    <mat-form-field>
+                        <mat-label>Data da viagem</mat-label>
+                        <input matInput [matDatepicker]="picker" formControlName="date">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                </div>
+                <div fxFlex="50" fxFill fxLayoutAlign="start center">
+                    <mat-form-field>
+                        <mat-label>Horário da viagem</mat-label>
+                        <input matInput type="time" placeholder="" formControlName="hora" #time/>
+                    </mat-form-field>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
