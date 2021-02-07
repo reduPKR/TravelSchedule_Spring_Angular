@@ -24,7 +24,8 @@ export class NewTravelComponent implements OnInit {
   initForm(){
     this.travelForm = this.fb.group({
       nome: ['', [Validators.required]],
-      date: ['', [Validators.required]]
+      date: ['', [Validators.required]],
+      hora: ['', [Validators.required]]
     });
   }
 
