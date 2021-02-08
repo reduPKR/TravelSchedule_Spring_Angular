@@ -34,4 +34,8 @@ public class DestinationService {
         DestinationCity travel = repository.save(destinationCity);
         return (Page<DestinationCity>) travel;
     }
+
+    public void deleteTravel(long id) {
+        repository.deleteById(id);
+    }
 }

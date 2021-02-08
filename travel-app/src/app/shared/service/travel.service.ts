@@ -26,6 +26,6 @@ export class TravelService {
   }
 
   public deleteTravel(id: any) {
-    return this.httpClient.delete<any>(this.apiUrl, id);
+    return this.httpClient.delete<any>(this.apiUrl+"/"+id);
   }
 }

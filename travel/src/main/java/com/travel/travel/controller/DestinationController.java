@@ -38,8 +38,9 @@ public class DestinationController {
         return new ResponseEntity<Page<DestinationCity>>(destinationCity, HttpStatus.CREATED);
     }
 
-    @DeleteMapping
-    public void deleteTravel(@RequestParam int id){
-        System.out.println(id);
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Page<DestinationCity>> deleteTravel(@PathVariable("id") long id){
+        service.deleteTravel(id);
+        return new ResponseEntity<Page<DestinationCity>>((Page<DestinationCity>) null, HttpStatus.OK);
     }
 }
