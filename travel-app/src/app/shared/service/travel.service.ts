@@ -24,4 +24,8 @@ export class TravelService {
   public postTravel(travel: any): Observable<DestinationCity> {
     return this.httpClient.post<any>(this.apiUrl, travel, this.httpOptions);
   }
+
+  public deleteTravel(id: any) {
+    return this.httpClient.delete<any>(this.apiUrl, id);
+  }
 }

@@ -28,4 +28,9 @@ export class ListComponent implements OnInit {
     );
     console.log(this.lista)
   }
+
+  delete(id: any){
+    this.travelService.deleteTravel(id).subscribe(result => {});
+    window.location.reload();
+  }
 }

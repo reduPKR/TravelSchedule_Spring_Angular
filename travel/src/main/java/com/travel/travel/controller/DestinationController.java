@@ -37,4 +37,9 @@ public class DestinationController {
         Page<DestinationCity> destinationCity = service.createTravel(destinationCityDTO);
         return new ResponseEntity<Page<DestinationCity>>(destinationCity, HttpStatus.CREATED);
     }
+
+    @DeleteMapping
+    public void deleteTravel(@RequestParam int id){
+        System.out.println(id);
+    }
 }
