@@ -24,7 +24,7 @@ export class NewTravelComponent implements OnInit {
 
   initForm(){
     this.travelForm = this.fb.group({
-      nome: ['', [Validators.required]],
+      cidade: ['', [Validators.required]],
       date: ['', [Validators.required]],
       hora: ['', [Validators.required]]
     });
@@ -38,6 +38,7 @@ export class NewTravelComponent implements OnInit {
   scheduleTrip(){
     let travelDate: moment.Moment = moment.utc(this.travelForm.value.date).local();
     this.travelForm.value.date = travelDate.format("YYYY-MM-DD") + 'T' + this.travelForm.value.hora;
+    console.log(this.travelForm.value)
     this.rest.postTravel(this.travelForm.value).subscribe(result => {});
     this.dialogRef.close(true);
     this.travelForm.reset();

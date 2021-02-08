@@ -1,5 +1,6 @@
 package com.travel.travel.controller;
 
+import com.travel.travel.DTO.DestinationCityDTO;
 import com.travel.travel.entity.DestinationCity;
 import com.travel.travel.service.DestinationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,10 +10,9 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @CrossOrigin(origins = "*")
 @RestController
@@ -30,5 +30,11 @@ public class DestinationController {
         }else {
             return new ResponseEntity<Page<DestinationCity>>(destinationPage, HttpStatus.OK);
         }
+    }
+
+    @PostMapping
+    public ResponseEntity<Page<DestinationCity>> createTravel(@RequestBody @Valid DestinationCityDTO destinationCityDTO){
+        Page<DestinationCity> destinationCity = service.createTravel(destinationCityDTO);
+        return new ResponseEntity<Page<DestinationCity>>(destinationCity, HttpStatus.CREATED);
     }
 }
