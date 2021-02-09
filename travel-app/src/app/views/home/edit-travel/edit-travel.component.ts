@@ -17,7 +17,7 @@ export class EditTravelComponent implements OnInit {
   constructor(
       public dialogRef: MatDialogRef<EditTravelComponent>,
       public fb: FormBuilder,
-      private travelService: TravelService
+      private travelService: TravelService,
       @Inject(MAT_DIALOG_DATA) public travel: DestinationCity
     ) { }
 
@@ -29,6 +29,7 @@ export class EditTravelComponent implements OnInit {
     var aux = this.travel.date.split("T");
 
     this.travelForm = this.fb.group({
+      id: this.travel.id,
       cidade: [this.travel.cidade, [Validators.required]],
       date: [aux[0], [Validators.required]],
       hora: [aux[1], [Validators.required]]

@@ -43,4 +43,10 @@ public class DestinationController {
         service.deleteTravel(id);
         return new ResponseEntity<Page<DestinationCity>>((Page<DestinationCity>) null, HttpStatus.OK);
     }
+
+    @PutMapping
+    public ResponseEntity<Page<DestinationCity>> putTravel(@RequestBody @Valid DestinationCityDTO destinationCityDTO){
+        Page<DestinationCity> destinationCity = service.createTravel(destinationCityDTO);
+        return new ResponseEntity<Page<DestinationCity>>(destinationCity, HttpStatus.CREATED);
+    }
 }

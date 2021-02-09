@@ -1,17 +1,17 @@
 <div class="titulo">
-    <h1 mat-dialog-title>Editar viagem para: {{travel.cidade}}</h1>
+    <h1 mat-dialog-title>Editar viagem para: {{travelForm.cidade}}</h1>
 </div>
 <div mat-dialog-content>
     <form class="form-todo" [formGroup]="travelForm">
         <mat-form-field class="form-full-width">
             <mat-label>Cidade de destino</mat-label>
-            <input matInput placeholder="" value="{{cidade}}" formControlName="cidade" name="cidade">
+            <input matInput placeholder="" formControlName="cidade" name="cidade">
         </mat-form-field>
         <div fxLayout="row wrap">
             <div fxFlex="50" fxFill fxLayoutAlign="start center">
                 <mat-form-field class="form-full-width">
                     <mat-label>Data da viagem</mat-label>
-                    <input matInput [matDatepicker]="picker" value="{{date}}" formControlName="date">
+                    <input matInput [matDatepicker]="picker" formControlName="date">
                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
                 </mat-form-field>
@@ -19,7 +19,7 @@
             <div fxFlex="50" fxFill fxLayoutAlign="start center">
                 <mat-form-field class="form-full-width">
                     <mat-label>Horário da viagem</mat-label>
-                    <input matInput type="time" placeholder="" value="{{hora}}" formControlName="hora" #time/>
+                    <input matInput type="time" placeholder=""  formControlName="hora" #time/>
                 </mat-form-field>
             </div>
         </div>

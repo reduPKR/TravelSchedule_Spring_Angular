@@ -30,6 +30,6 @@ export class TravelService {
   }
 
   public editTravel(travel: any): Observable<DestinationCity> {
-    return this.httpClient.put<any>(this.apiUrl, travel, this.httpOptions);
+    return this.httpClient.put<any>(this.apiUrl, travel);
   }
 }
