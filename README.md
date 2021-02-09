@@ -3,7 +3,8 @@
 #### travel-app -> Front-end Angular    
   
 ## Rotas Rest Api:  
-localhost:8080/api/travel
+/api/travel
+
 
 ## UI/UX do sistema de viagens  
 #### Lista de viagens programadas  
