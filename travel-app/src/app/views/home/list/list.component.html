@@ -9,7 +9,7 @@
             <td class="td_destino">{{item.cidade}}</td>
             <td class="td_destino">{{item.date | localDateTime}}</td>
             <td class="td_button">
-                <button  style="margin-right: 15px;" mat-flat-button color="primary">
+                <button  style="margin-right: 15px;" mat-flat-button color="primary" (click)="editTravel(item)">
                     <mat-icon>edit</mat-icon>
                 </button>
                 <button  mat-flat-button color="warn" (click)="delete(item.id)">

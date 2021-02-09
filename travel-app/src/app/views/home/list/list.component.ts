@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { DestinationCity } from 'src/app/shared/model/destination-city.model';
 import { TravelService } from 'src/app/shared/service/travel.service';
+import { EditTravelComponent } from '../edit-travel/edit-travel.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-list',
@@ -13,7 +15,8 @@ export class ListComponent implements OnInit {
 
   constructor(
     public travelService: TravelService,
-    public sanitizer: DomSanitizer
+    public sanitizer: DomSanitizer,
+    public dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -32,5 +35,17 @@ export class ListComponent implements OnInit {
   delete(id: any){
     this.travelService.deleteTravel(id).subscribe(result => {});
     window.location.reload();
+  }
+
+  editTravel(item: any){
+    console.log(item)
+    const dialogRef = this.dialog.open(EditTravelComponent, {
+      minWidth: '500px',
+      data: item
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('Bye');
+    });
   }
 }

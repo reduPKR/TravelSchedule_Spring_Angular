@@ -21,6 +21,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { HttpClientModule } from '@angular/common/http';
 import { LocalDateTimePipe } from './shared/pipe/local-date-time.pipe';
 import { NewTravelComponent } from './views/home/new-travel/new-travel.component';
+import { EditTravelComponent } from './views/home/edit-travel/edit-travel.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { NewTravelComponent } from './views/home/new-travel/new-travel.component
     HomeComponent,
     ListComponent,
     LocalDateTimePipe,
-    NewTravelComponent
+    NewTravelComponent,
+    EditTravelComponent
   ],
   imports: [
     HttpClientModule,

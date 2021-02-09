@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  new_travel(): void{
+  newTravel(): void{
     const dialogRef = this.dialog.open(NewTravelComponent, {
       minWidth: '500px',
     });
