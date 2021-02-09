@@ -28,4 +28,8 @@ export class TravelService {
   public deleteTravel(id: any) {
     return this.httpClient.delete<any>(this.apiUrl+"/"+id);
   }
+
+  public editTravel(travel: any): Observable<DestinationCity> {
+    return this.httpClient.put<any>(this.apiUrl, travel, this.httpOptions);
+  }
 }

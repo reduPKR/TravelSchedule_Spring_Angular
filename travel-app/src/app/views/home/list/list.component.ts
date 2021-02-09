@@ -38,7 +38,6 @@ export class ListComponent implements OnInit {
   }
 
   editTravel(item: any){
-    console.log(item)
     const dialogRef = this.dialog.open(EditTravelComponent, {
       minWidth: '500px',
       data: item

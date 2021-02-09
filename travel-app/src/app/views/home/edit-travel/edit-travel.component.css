@@ -1,0 +1,16 @@
+.form-todo {
+    min-width: 150px;
+    max-width: 400px;
+    width: 100%;
+}
+
+.form-full-width {
+    width: 100%;    
+}
+
+.titulo{
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    height: 40px;
+    text-align: center;
+}
